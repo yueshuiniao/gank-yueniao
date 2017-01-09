@@ -1,0 +1,16 @@
+
+.example-enter {
+    top: 0px;
+}
+.example-enter-active {
+    top: 80px;
+    transition: all 500ms ease;
+}
+
+.example-leave {
+    top: 80px;
+}
+.example-leave-active {
+    top: 0;
+    transition: all 300ms ease;
+}

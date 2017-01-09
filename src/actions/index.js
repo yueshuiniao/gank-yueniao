@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const pageSize = 10;
 
-export const FETCH_TODOS_REQUEST = 'FETCH_TODOS_REQUEST';
-export const FETCH_TODOS_SUCCESS = 'FETCH_TODOS_SUCCESS';
-export const FETCH_TODOS_FAILURE = 'FETCH_TODOS_FAILURE';
+export const FETCH_GIRLS_REQUEST = 'FETCH_GIRLS_REQUEST';
+export const FETCH_GIRLS_SUCCESS = 'FETCH_GIRLS_SUCCESS';
+export const FETCH_GIRLS_FAILURE = 'FETCH_GIRLS_FAILURE';
 
 export const fetchGirls = (page) => (dispatch, getState) =>{
     // if(getIsFetching(getState(), filter)){
@@ -12,7 +12,7 @@ export const fetchGirls = (page) => (dispatch, getState) =>{
     // }
 
     dispatch({
-        type: FETCH_TODOS_REQUEST,
+        type: FETCH_GIRLS_REQUEST,
         page,
     });
 
@@ -21,14 +21,14 @@ export const fetchGirls = (page) => (dispatch, getState) =>{
             console.log(`http://gank.io/api/data/%E7%A6%8F%E5%88%A9/${pageSize}/${page}`)
             console.log(data)
             dispatch({
-                type: FETCH_TODOS_SUCCESS,
+                type: FETCH_GIRLS_SUCCESS,
                 page,
                 results: data.results
             })
         },
         error => {
             dispatch({
-                type: FETCH_TODOS_FAILURE,
+                type: FETCH_GIRLS_FAILURE,
                 page,
                 message: error.message || 'Something went wrong.',
             })

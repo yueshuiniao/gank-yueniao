@@ -23,19 +23,18 @@ export const scrollToBottom = {
     },
     getClientHeight:function(){
         var windowHeight = 0;
-        if(document.compatMode == "CSS1Compat"){
+        if(document.compatMode === "CSS1Compat"){
             windowHeight = document.documentElement.clientHeight;
         }else{
             windowHeight = document.body.clientHeight;
         }
-        console.log(document.documentElement.clientHeight, document.body.clientHeight)
         return windowHeight;
     },
     onScrollEvent:function(callback){
         var This = this;
         window.onscroll = function(){
             if(This.getScrollTop() + This.getClientHeight() >= This.getScrollHeight()){
-                typeof callback == "function" && callback.call(this);
+                typeof callback === "function" && callback.call(this);
             }
         }
     }

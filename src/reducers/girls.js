@@ -1,9 +1,8 @@
-import { FETCH_TODOS_REQUEST ,FETCH_TODOS_SUCCESS ,FETCH_TODOS_FAILURE } from '../actions'
-console.log(FETCH_TODOS_SUCCESS)
-const girls = (state = [], action) => {
-    console.log(action.results, action.page)
+import { FETCH_GIRLS_REQUEST ,FETCH_GIRLS_SUCCESS ,FETCH_GIRLS_FAILURE } from '../actions'
+
+export const girls = (state = [], action) => {
     switch(action.type) {
-        case FETCH_TODOS_SUCCESS:
+        case FETCH_GIRLS_SUCCESS:
             return [
                 ...state,
                 ...action.results.map((v, k) => ({
@@ -16,13 +15,20 @@ const girls = (state = [], action) => {
     }
 }
 
-const page = (state = [], action) => {
+export const page = (state = [], action) => {
     switch(action.type) {
-        case FETCH_TODOS_SUCCESS:
+        case FETCH_GIRLS_SUCCESS:
             return action.page;
         default:
             return state;
     }
 }
 
-export { girls, page };
+export const isFecthing = (state = false, action) => {
+    switch(action.type) {
+        case FETCH_GIRLS_REQUEST:
+            return true;
+        default:
+            return false;
+    }
+}
