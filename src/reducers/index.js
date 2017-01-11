@@ -1,12 +1,15 @@
-import { combineReducers } from 'redux';
-import { girls, page, isFecthing } from './girls';
-import { routerReducer } from 'react-router-redux';
+import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
+
+import { girls, page, isFecthing } from './girls'
+import { isNavOpen } from './little'
 
 const rootReducer = combineReducers({
+    routing: routerReducer,
     girls,
     page,
     isFecthing,
-    routing: routerReducer
+    isNavOpen
 });
 
 export default rootReducer;

@@ -3,8 +3,9 @@ import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
-import Main from './components/Main';
+// import Main from './components/Main';
 import Hello from './containers/Hello';
+import Main from './containers/Main';
 import GirlList from './containers/GirlList';
 
 import configureStore from './store';
@@ -20,7 +21,8 @@ const routes = (
         <Router history={history}>
             <Route path="/" component={Main}>
                 <IndexRoute component={GirlList}></IndexRoute>
-                <Route path="" component={Hello}></Route>
+                <Route path="/girls" component={GirlList}></Route>
+                <Route path="/front" component={Hello}></Route>
             </Route>
         </Router>    
     </Provider>

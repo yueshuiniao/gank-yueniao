@@ -15,7 +15,7 @@ export const girls = (state = [], action) => {
     }
 }
 
-export const page = (state = [], action) => {
+export const page = (state = 1, action) => {
     switch(action.type) {
         case FETCH_GIRLS_SUCCESS:
             return action.page;

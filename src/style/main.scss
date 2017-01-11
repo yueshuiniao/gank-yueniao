@@ -1,16 +1,85 @@
-body{
-    background: #E1E1E1;
+$navWidth : 7.5rem;
+
+body{ position: relative; -webkit-overflow-scrolling: touch;}
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, blockquote, fieldset, input, abbr, article, section, aside, a, span, em, i, strong, img, p{ margin: 0; padding: 0;}
+h1, h2,h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, th, figcaption{ font-weight: normal;  font-style: normal;}
+ul, ol, li, dl, dt, dd{ list-style: none;}
+fieldset, iframe, img{ border: none;}
+table{ border-collapse: collapse; border-spacing: 0;}
+article, aside, footer, header, hgroup, nav, section, figure, figcaption, video{ display: block;}
+a{ text-decoration: none; color: #333;}
+input, select{ border: none; outline: none;}
+input[type="text"]{ background-position-y: -1px;}
+i, cite, em, var, address{ font-style: normal;}
+a{ outline: none;}
+a:active{ outline: none;}
+*{ -webkit-tap-highlight-color: rgba(255, 0, 0, 0);}
+b, strong{ font-weight: bold;}
+
+html, body, #root, .main {
+    width: 10rem;
+    height: 100%;
+    overflow: hidden;
 }
 
-.nav {
+body {
+    background: #fff;
+    font-size: 12px;
+    
+}
+
+.header {
+    width: 10rem;
     height: 50px;
-    line-height: 50px;
+    line-height: 0.8rem;
     color: #fff;
     font-size: 26px;
     background: #434343;
 }
 
-.loading{
+.main {
+    overflow: hidden;
+    width: 17.5rem;
+    display: flex;
+    justify-content: flex-start;
+    // position: relative; //父级overflow: hidden; 子元素绝度拆定位会失效，此时要给父元素加相对定位
+    
+    .nav {
+        // width: 5rem;  //不能直接给nav设宽度，不然动画无效
+        height: 100%;
+        font-size: 16px;
+        background: #555555;
+        
+        .nav-con {  //用这个nav的子元素把nav撑起来
+            width: $navWidth;
+        }
+    }
+
+    .content {
+        width: 10rem;
+        overflow: scroll;
+        height: 100%;  //傻吊了
+        // position: absolute;
+        // top: 0;
+        left: $navWidth;
+    }
+
+    a {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.loading {
     width: 40px;
     height: 40px;
     position: fixed;

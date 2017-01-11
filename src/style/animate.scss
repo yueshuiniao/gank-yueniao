@@ -1,16 +1,35 @@
+$navWidth: 7.5rem;
 
-.example-enter {
+.loading-enter {
     top: 0px;
 }
-.example-enter-active {
+.loading-enter-active {
     top: 80px;
-    transition: all 500ms ease;
+    transition: all 500ms ease-out;
 }
 
-.example-leave {
-    top: 80px;
+// .example-leave {
+//     top: 80px;
+// }
+// .example-leave-active {
+//     top: 0;
+//     transition: all 300ms ease;
+// }
+.nav-transition {
+    height: 100%;
 }
-.example-leave-active {
-    top: 0;
-    transition: all 300ms ease;
+
+.navopen-enter {
+    width: 0;
+}
+.navopen-enter-active {
+    width: $navWidth;
+    transition: width 800ms ease-out;
+}
+.navopen-leave {
+    width: $navWidth;
+}
+.navopen-leave-active {
+    width: 0;
+    transition: width 500ms ease-in;
 }

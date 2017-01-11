@@ -9,7 +9,6 @@ import Loading from './Loading'
 class GirlList extends Component {
     componentDidMount() {
         this.fetchGirlsData(1);
-        scrollToBottom.onScrollEvent(() => !this.props.isFecthing && this.fetchGirlsData(this.props.page + 1));
     }
 
     // componentDidUpdate() {
@@ -26,14 +25,14 @@ class GirlList extends Component {
         return (
             <div>
                 <ReactCSSTransitionGroup 
-                    transitionName="example" 
+                    transitionName="loading" 
                     component="div"
                     transitionEnterTimeout={500} 
                     transitionLeaveTimeout={300}
                 >
                     { isFecthing ? <Loading /> : '' }
                 </ReactCSSTransitionGroup>
-                <div className="girl-list">
+                <div className="girl-list" ref="girlList" onScroll={function(){alert('666')}}>
                     {
                         girls.map((v, k) => <GirlItem key={v._id} girl={v}/>)
                     }

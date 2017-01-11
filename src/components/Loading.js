@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../style/animate.scss'
-
 const Loading = () => (
     <div className="loading">
         <svg width='40px' height='40px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
