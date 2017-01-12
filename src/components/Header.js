@@ -5,8 +5,11 @@ import '../style/main.scss'
 
 const Header = ({ children, changeNavState, isNavOpen }) => (
     <div className="header">
-        <span onClick={() => changeNavState(!isNavOpen)}>图</span>
-        header
+        <i className="iconfont icon-zhankai open-nav"
+             onClick={() => changeNavState(!isNavOpen)}
+        >
+        </i>
+        
     </div>
 );
 

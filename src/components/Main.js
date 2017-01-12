@@ -29,7 +29,7 @@ class Main extends Component {
                     className="nav-transition"
                     transitionName="navopen" 
                     component="div"
-                    transitionEnterTimeout={800} 
+                    transitionEnterTimeout={600} 
                     transitionLeaveTimeout={500}
                 >
                     { isNavOpen ? <Nav /> : '' }

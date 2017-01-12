@@ -24,7 +24,7 @@ $navWidth: 7.5rem;
 }
 .navopen-enter-active {
     width: $navWidth;
-    transition: width 800ms ease-out;
+    transition: width 600ms ease-out;
 }
 .navopen-leave {
     width: $navWidth;

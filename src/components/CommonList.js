@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-import '../style/girls.scss'
-import GirlItem from './GirlItem'
+// import '../style/girls.scss'
+import CommonItem from './CommonItem'
 import Loading from './Loading'
 
-class GirlList extends Component {
+class commonList extends Component {
     componentDidMount() {
-        if(this.props.girls.length) return;
-        this.fetchGirlsData(1);
+        if(this.props.list.length) return;
+        this.fetchListData(1);
     }
 
     // componentDidUpdate() {
 
     // }
 
-    fetchGirlsData(page) {
-        const { fetchGirls  } = this.props;
-        fetchGirls(page);
+    fetchListData(page) {
+        const { fetchList } = this.props;
+        fetchList(page);
     }
 
     render(){
-        const { girls, isFecthing } = this.props;
+        const { list, isFecthing } = this.props;
         return (
             <div>
                 <ReactCSSTransitionGroup 
@@ -32,9 +32,9 @@ class GirlList extends Component {
                 >
                     { isFecthing ? <Loading /> : '' }
                 </ReactCSSTransitionGroup>
-                <div className="girl-list">
+                <div className="common-list">
                     {
-                        girls.map((v, k) => <GirlItem key={v._id} girl={v}/>)
+                        list.map((v, k) => <CommonItem key={v._id} item={v}/>)
                     }
                 </div>    
             </div>
@@ -42,4 +42,4 @@ class GirlList extends Component {
     }
 }
 
-export default GirlList;
+export default commonList;
