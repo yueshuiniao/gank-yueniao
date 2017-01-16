@@ -1,41 +1,39 @@
 $navWidth : 7.5rem;
 $headerHeight : 1.3rem;
 
-body{ position: relative; -webkit-overflow-scrolling: touch;}
-html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, blockquote, fieldset, input, abbr, article, section, aside, a, span, em, i, strong, img, p{ margin: 0; padding: 0;}
-h1, h2,h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, th, figcaption{ font-weight: normal;  font-style: normal;}
-ul, ol, li, dl, dt, dd{ list-style: none;}
-fieldset, iframe, img{ border: none;}
-table{ border-collapse: collapse; border-spacing: 0;}
-article, aside, footer, header, hgroup, nav, section, figure, figcaption, video{ display: block;}
+@mixin font-dpr($font-size){
+    font-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
 a{ text-decoration: none; color: #333;}
-input, select{ border: none; outline: none;}
-input[type="text"]{ background-position-y: -1px;}
-i, cite, em, var, address{ font-style: normal;}
-a{ outline: none;}
-a:active{ outline: none;}
-*{ -webkit-tap-highlight-color: rgba(255, 0, 0, 0);}
-b, strong{ font-weight: bold;}
 
 .iconfont {
-    font-size: 24px;
+    @include font-dpr(18px);
 }
 
 html, body, #root, .main {
-    width: 10rem;
+    width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
 body {
     background: #fff;
-    font-size: 12px;
-    
+    font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti,sans-serif;
 }
 
 .main {
     overflow: hidden;
-    width: 17.5rem;
+    width: 10rem;
+    margin: 0 auto;
     display: flex;
     justify-content: flex-start;
     // position: relative; //父级overflow: hidden; 子元素绝度拆定位会失效，此时要给父元素加相对定位
@@ -43,14 +41,14 @@ body {
     .nav {
         // width: 5rem;  //不能直接给nav设宽度，不然动画无效
         height: 100%;
-        font-size: 16px;
+        @include font-dpr(16px);
         background: #555555;
         
         .nav-con {  //用这个nav的子元素把nav撑起来
             width: $navWidth;
 
             a {
-                font-size: 20px;
+                @include font-dpr(16px);
                 color: #fff;
                 padding: 0.5em 0.8em;
                 display: block;
@@ -66,7 +64,7 @@ body {
     .content {
         width: 10rem;
         overflow: hidden;
-        height: 100%;  //傻吊了
+        height: 100%;
         // position: absolute;
         // top: 0;
         left: $navWidth;
@@ -79,7 +77,7 @@ body {
         
         .common-list-scroll{
             height: 100%;
-            overflow-y: scroll;
+            overflow-y: scroll; //要让谁滚动条滚动就要限死它的高度，不能用auto
         }
 
         .common-list-hidden{
@@ -98,8 +96,8 @@ body {
         .common-item {
             display: block;
             width: 10rem;
-            font-size: 20px;
-            line-height: 32px;
+            @include font-dpr(16px);
+            line-height: 0.7rem;
             padding: 0.3rem 0.5rem;
             box-sizing: border-box;
 
@@ -108,7 +106,7 @@ body {
             }
 
             .item-msg{
-                font-size: 16px;
+                @include font-dpr(12px);
             }
             .item-time{
                 margin-right: 1rem;
@@ -122,7 +120,7 @@ body {
 
     
     a {
-        font-size: 16px;
+        @include font-dpr(16px);
     }
 
     .header {
@@ -130,9 +128,8 @@ body {
         height: $headerHeight;
         line-height: $headerHeight;
         color: #fff;
-        font-size: 26px;
+        @include font-dpr(20px);
         background: #434343;
-        z-index: 9;
         display: flex;
         justify-content: flex-start;
 
@@ -161,14 +158,12 @@ body {
 
 
 .loading {
-    width: 40px;
-    height: 40px;
+    width: 1rem;
+    height: 1rem;
     position: absolute;
-    top: 80px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
+    top: 1.5rem;
+    left: 4.3rem;
     background: #fff;
-    padding: 10px;
+    padding: 0.2rem;
     border-radius: 50%;
 }

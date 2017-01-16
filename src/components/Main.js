@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import 'normalize.css'
+// import 'normalize.css'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import '../style/main.scss'
