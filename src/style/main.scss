@@ -13,6 +13,7 @@ $headerHeight : 1.3rem;
     }
 }
 
+body, nav, div, ul { -webkit-overflow-scrolling: touch; }
 a{ text-decoration: none; color: #333;}
 
 .iconfont {
