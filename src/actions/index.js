@@ -43,6 +43,7 @@ export const changeNavState = (isNavOpen) => ({
 })
 
 export const fetchList = (page, tab = '前端') => (dispatch, getState) =>{
+    // console.log(tab)
     dispatch({
         type: FETCH_LIST_REQUEST,
         page,

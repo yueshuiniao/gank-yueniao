@@ -14,7 +14,8 @@ const createList = (tab) => {
                             _id: v._id,
                             type: v.type,
                             desc: v.desc,
-                            who: v.who
+                            who: v.who,
+                            publishedAt: v.publishedAt
                         }))
                 ]
             default:
@@ -49,4 +50,8 @@ const createList = (tab) => {
     })
 }
 
-export const front = createList('\u524d\u7aef');
+export const front = createList('前端');
+export const girls = createList('福利');
+export const Android = createList('Android');
+export const iOS = createList('iOS');
+export const other = createList('拓展资源');

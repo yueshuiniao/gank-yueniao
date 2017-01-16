@@ -1,12 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
 
+import { changeNavState } from './actions'
 // import Main from './components/Main';
-import Hello from './containers/Hello';
 import Main from './containers/Main';
-import GirlList from './containers/GirlList';
 import CommonList from './containers/CommonList';
 
 import configureStore from './store';
@@ -21,9 +20,8 @@ const routes = (
     <Provider store={store}>
         <Router history={history}>
             <Route path="/" component={Main}>
-                <IndexRoute component={GirlList}></IndexRoute>
-                <Route path="/girls" component={GirlList}></Route>
-                <Route path="/(:tab)" component={CommonList}></Route>
+                <IndexRedirect to="/girls" />
+                <Route path="/(:tab)" component={CommonList} onEnter={() => store.dispatch(changeNavState(false))}></Route>
             </Route>
         </Router>    
     </Provider>

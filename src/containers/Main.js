@@ -1,14 +1,18 @@
 import { connect } from 'react-redux'
 
 import Main from '../components/Main'
-import { changeNavState, fetchGirls } from '../actions';
+import { changeNavState, fetchList } from '../actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { params }) => {
+    // console.log(params)
+    // console.log(params.tab)
+    // console.log(state[params.tab])
+    // console.log(state[params.tab].isFecthing)
     return {
         isNavOpen: state.isNavOpen,
-        isFecthing: state.isFecthing,
-        page: state.page
+        isFecthing: state[params.tab].isFecthing,
+        page: state[params.tab].page
     }
 }
 
-export default connect(mapStateToProps, { changeNavState, fetchGirls })(Main);
+export default connect(mapStateToProps, { changeNavState, fetchList })(Main);

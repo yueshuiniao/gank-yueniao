@@ -1,4 +1,5 @@
 $navWidth : 7.5rem;
+$headerHeight : 1.3rem;
 
 body{ position: relative; -webkit-overflow-scrolling: touch;}
 html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, blockquote, fieldset, input, abbr, article, section, aside, a, span, em, i, strong, img, p{ margin: 0; padding: 0;}
@@ -54,35 +55,96 @@ body {
                 padding: 0.5em 0.8em;
                 display: block;
             }
+            a.nav-active {
+                color: #FD971F;
+            }
         }
+
+        
     }
 
     .content {
         width: 10rem;
-        overflow: scroll;
+        overflow: hidden;
         height: 100%;  //傻吊了
         // position: absolute;
         // top: 0;
         left: $navWidth;
+
+        .list-container {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .common-list-scroll{
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        .common-list-hidden{
+            overflow-y: hidden;
+        }
+
+        .girl-item{
+            text-align: center;
+            margin: 0.15rem;
+
+            img{
+                width: 9.6rem;
+            }
+        }
+
+        .common-item {
+            display: block;
+            width: 10rem;
+            font-size: 20px;
+            line-height: 32px;
+            padding: 0.3rem 0.5rem;
+            box-sizing: border-box;
+
+            &+.common-item {
+                border-top: 1px solid #dadada;
+            }
+
+            .item-msg{
+                font-size: 16px;
+            }
+            .item-time{
+                margin-right: 1rem;
+                color: #FF7B28;
+            }
+            .item-author{
+                color: #434343;
+            }
+        }
     }
 
+    
     a {
         font-size: 16px;
     }
 
     .header {
         width: 10rem;
-        height: 2em;
-        line-height: 2em;
+        height: $headerHeight;
+        line-height: $headerHeight;
         color: #fff;
         font-size: 26px;
         background: #434343;
+        z-index: 9;
+        display: flex;
+        justify-content: flex-start;
 
         .open-nav {
             display: block;
-            width: 2em;
-            height: 2em;
+            width: $headerHeight;
+            height: $headerHeight;
             text-align: center;
+        }
+
+        .header-title {
+            height: 1.3rem;
         }
     }
 
@@ -101,7 +163,7 @@ body {
 .loading {
     width: 40px;
     height: 40px;
-    position: fixed;
+    position: absolute;
     top: 80px;
     margin: 0 auto;
     left: 0;

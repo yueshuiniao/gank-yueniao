@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
-import { fetchGirls } from '../actions';
+import { fetchList } from '../actions';
 import GirlList from '../components/GirlList';
 
-const mapStateToProps = ({ girls, page, isFecthing }) => {
-    return { girls, page, isFecthing }
+const mapStateToProps = ({ girls }) => {
+    return { ...girls }
 }
 
-export default connect(mapStateToProps, { fetchGirls })(GirlList);
+export default connect(mapStateToProps, { fetchList })(GirlList);

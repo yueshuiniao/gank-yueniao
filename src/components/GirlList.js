@@ -7,23 +7,23 @@ import Loading from './Loading'
 
 class GirlList extends Component {
     componentDidMount() {
-        if(this.props.girls.length) return;
-        this.fetchGirlsData(1);
+        if(this.props.list.length) return;
+        this.fetchGirlsData(1, '福利');
     }
 
     // componentDidUpdate() {
 
     // }
 
-    fetchGirlsData(page) {
-        const { fetchGirls  } = this.props;
-        fetchGirls(page);
+    fetchGirlsData(page, tab) {
+        const { fetchList  } = this.props;
+        fetchList(page, tab);
     }
 
     render(){
-        const { girls, isFecthing } = this.props;
+        const { list, isFecthing } = this.props;
         return (
-            <div>
+            <div className="list-container">
                 <ReactCSSTransitionGroup 
                     transitionName="loading" 
                     component="div"
@@ -34,7 +34,7 @@ class GirlList extends Component {
                 </ReactCSSTransitionGroup>
                 <div className="girl-list">
                     {
-                        girls.map((v, k) => <GirlItem key={v._id} girl={v}/>)
+                        list.map((v, k) => <GirlItem key={v._id} girl={v}/>)
                     }
                 </div>    
             </div>
