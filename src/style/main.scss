@@ -40,22 +40,54 @@ body {
     // position: relative; //父级overflow: hidden; 子元素绝度拆定位会失效，此时要给父元素加相对定位
     
     .nav {
+        width: $navWidth;
         // width: 5rem;  //不能直接给nav设宽度，不然动画无效
+        color: #fff;
         height: 100%;
         @include font-dpr(16px);
         background: #555555;
-        
+
         .nav-con {  //用这个nav的子元素把nav撑起来
-            width: $navWidth;
+
+            .nav-user{
+                width: 100%;
+                padding: 1rem 0 0.3rem 0;
+                text-align: center;
+            }
+
+            .nav-user-header{
+                width: 1.8rem;
+                height: 1.8rem;
+                border-radius: 50%;
+                background: red;
+            }
+
+            .nav-sign{
+                line-height: 1rem;
+            }
 
             a {
                 @include font-dpr(16px);
                 color: #fff;
-                padding: 0.5em 0.8em;
+                // padding: 0.2rem 0.8rem;
                 display: block;
             }
             a.nav-active {
                 color: #FD971F;
+            }
+
+            i {
+                padding-right: 0.2rem;
+            }
+
+            .nav-item {
+                // display: flex;
+                // justify-content: flex-start;
+                // align-items: center;
+                width: 100%;
+                display: block;
+                box-sizing: border-box;
+                padding: 0.2rem 0.8rem;
             }
         }
 
@@ -77,12 +109,13 @@ body {
         }
         
         .common-list-scroll{
-            height: 100%;
-            overflow-y: scroll; //要让谁滚动条滚动就要限死它的高度，不能用auto
+            z-index: 9;
+            height: 100%;   //要让谁滚动条滚动就要限死它的高度，不能用auto
+            overflow-y: auto; 
         }
 
         .common-list-hidden{
-            overflow-y: hidden;
+            overflow: hidden;
         }
 
         .girl-item{

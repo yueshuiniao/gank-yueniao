@@ -4,7 +4,7 @@ $navWidth: 7.5rem;
     top: 0px;
 }
 .loading-enter-active {
-    top: 80px;
+    top: 1.5rem;
     transition: all 500ms ease-out;
 }
 
@@ -20,16 +20,16 @@ $navWidth: 7.5rem;
 }
 
 .navopen-enter {
-    width: 0;
+    margin-left: -$navWidth;
 }
 .navopen-enter-active {
-    width: $navWidth;
-    transition: width 600ms ease-out;
+    margin-left: 0;
+    transition: margin-left 600ms ease-out;
 }
 .navopen-leave {
-    width: $navWidth;
+    margin-left: 0;
 }
 .navopen-leave-active {
-    width: 0;
-    transition: width 500ms ease-in;
+    margin-left: -$navWidth;
+    transition: margin-left 500ms ease-in;
 }

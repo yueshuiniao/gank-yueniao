@@ -2,25 +2,40 @@ import React from 'react'
 import { Link } from 'react-router'
 
 import '../style/main.scss'
+import userHead from '../images/dog.jpg'    //图片直接引入，棒
 
 const Nav = () => (
     <div className="nav">
         <div className="nav-con">
+            <div className="nav-user">
+                <img className="nav-user-header" src={userHead}></img>
+                <div className="nav-sign">Stay hungry, Study foolish</div>
+            </div>
             <ul>
-                <li>
-                    <Link to="/girls" activeClassName="nav-active">看妹子</Link>
+                <li className="nav-item">
+                    <Link to="/girls" activeClassName="nav-active">
+                        <i className="iconfont icon-girl"></i>看妹子
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/front" activeClassName="nav-active">前端</Link>
+                <li className="nav-item">
+                    <Link to="/front" activeClassName="nav-active">
+                        <i className="iconfont icon-qianduankaifa"></i>前端
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/Android" activeClassName="nav-active">Android</Link>
+                <li className="nav-item">
+                    <Link to="/Android" activeClassName="nav-active">
+                        <i className="iconfont icon-android"></i>Android
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/iOS" activeClassName="nav-active">iOS</Link>
+                <li className="nav-item">
+                    <Link to="/iOS" activeClassName="nav-active">
+                        <i className="iconfont icon-ios"></i>iOS
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/other" activeClassName="nav-active">拓展资源</Link>
+                <li className="nav-item">
+                    <Link to="/other" activeClassName="nav-active">
+                        <i className="iconfont icon-other"></i>拓展资源
+                    </Link>
                 </li>
             </ul>    
         </div>
