@@ -3,7 +3,9 @@ export const configTab = {
     front: '前端',
     Android: 'Android',
     iOS: 'iOS',
-    other: '拓展资源'
+    other: '拓展资源',
+    App: 'App',
+    all: 'all'
 }
 
 export const timeFormat = (time) => {

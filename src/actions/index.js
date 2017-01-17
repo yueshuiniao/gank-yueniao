@@ -71,3 +71,29 @@ export const fetchList = (page, tab = '前端') => (dispatch, getState) =>{
         }   
     );
 }
+
+// export const fetchDayList = (date) => (dispatch, getState) =>{
+//     dispatch({
+//         type: FETCH_LIST_REQUEST,
+//         date
+//     });
+
+//     return axios.get(`http://gank.io/api/day/${date}`).then(
+//         ({ data }) => {
+//             console.log(`http://gank.io/api/day/${date}`)
+//             console.log(data)
+//             dispatch({
+//                 type: FETCH_LIST_SUCCESS,
+//                 date,
+//                 results: data.results
+//             })
+//         },
+//         error => {
+//             dispatch({
+//                 type: FETCH_LIST_FAILURE,
+//                 date,
+//                 message: error.message || 'Something went wrong.',
+//             })
+//         }   
+//     );
+// }

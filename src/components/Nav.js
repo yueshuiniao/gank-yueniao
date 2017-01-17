@@ -23,6 +23,11 @@ const Nav = () => (
                     </Link>
                 </li>
                 <li className="nav-item">
+                    <Link to="/all" activeClassName="nav-active">
+                        <i className="iconfont icon-other"></i>All
+                    </Link>
+                </li>
+                <li className="nav-item">
                     <Link to="/Android" activeClassName="nav-active">
                         <i className="iconfont icon-android"></i>Android
                     </Link>
@@ -34,9 +39,23 @@ const Nav = () => (
                 </li>
                 <li className="nav-item">
                     <Link to="/other" activeClassName="nav-active">
-                        <i className="iconfont icon-other"></i>拓展资源
+                        <i className="iconfont icon-iconfontother"></i>拓展资源
                     </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/App" activeClassName="nav-active">
+                        <i className="iconfont icon-app1"></i>App
+                    </Link>
+                </li>
+                {
+                    // <li className="nav-item">
+                    //     <Link to="/day" activeClassName="nav-active">
+                    //         <i className="iconfont icon-day"></i>Everyday
+                    //     </Link>
+                    // </li>    
+                }
+                
+                
             </ul>    
         </div>
     </div>

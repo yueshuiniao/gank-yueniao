@@ -8,7 +8,6 @@ import Loading from './Loading'
 
 class commonList extends Component {
     componentDidMount() {
-        // if(this.props.list.length) return;
         console.log(configTab[this.props.params.tab], 666666666666)
         this.fetchListData(1, configTab[this.props.params.tab]);
     }
@@ -41,9 +40,13 @@ class commonList extends Component {
         const tab = params.tab;
         const getItem = () => {
             if(tab === 'girls') {
-                return list.map((v, k) => <GirlItem key={v._id} item={v}/>)
+                return list.map((v, k) => <GirlItem key={v._id} item={v}/>);
+            }else if(tab === 'all') {
+                return list.map((v, k) => {
+                    return v.type === '福利' ? <GirlItem key={v._id} item={v}/> : <CommonItem key={v._id} item={v}/>
+                });
             }else {
-                return list.map((v, k) => <CommonItem key={v._id} item={v}/>)
+                return list.map((v, k) => <CommonItem key={v._id} item={v}/>);
             }
         }
         return (
