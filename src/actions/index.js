@@ -10,6 +10,14 @@ export const FETCH_LIST_SUCCESS = 'FETCH_List_SUCCESS'
 export const FETCH_LIST_FAILURE = 'FETCH_List_FAILURE'
 
 export const CHANGE_NAV_STATE = 'CHANGE_NAV_STATE'  //改变侧边导航开合状态
+export const FETCH_CITY_REQUEST = 'FETCH_CITY_REQUEST'
+export const FETCH_CITY_SUCCESS = 'FETCH_CITY_SUCCESS'
+export const FETCH_CITY_FAILURE = 'FETCH_CITY_FAILURE'
+export const FETCH_WEATHER_REQUEST = 'FETCH_WEATHER_REQUEST'
+export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS'
+export const FETCH_WEATHER_FAILURE = 'FETCH_WEATHER_FAILURE'
+
+
 
 export const fetchGirls = (page) => (dispatch, getState) =>{
     dispatch({
@@ -97,3 +105,46 @@ export const fetchList = (page, tab = '前端') => (dispatch, getState) =>{
 //         }   
 //     );
 // }
+
+export const fetchCity = () => (dispatch, getState) =>{
+    // console.log(AMap, 555)
+    var citysearch = new window.AMap.CitySearch();  //AMap不加window ESLint会报错，暂时还没搞懂要怎么配置一下，在packjson里配置了env AMap: true好戏那个不行
+    
+    return citysearch.getLocalCity(function(status, result) {
+        if (status === 'complete' && result.info === 'OK') {
+            console.log(result.city, 555)
+            if (result && result.city) {
+                var city = result.city;
+                dispatch(fetchWeather(city));
+                dispatch({
+                    type: FETCH_CITY_SUCCESS,
+                    city
+                })
+            }
+        } else {
+            console.log(result.info);
+        }
+    });
+}
+
+export const fetchWeather = (city) => (dispatch, getState) =>{
+    dispatch({
+        type: FETCH_WEATHER_REQUEST
+    });
+
+    return axios.get(`https://free-api.heweather.com/v5/hourly?city=${city}&key=dc8fb4f85af34ac181d99afa27164508`).then(
+        ({ data }) => {
+            console.log(`https://free-api.heweather.com/v5/hourly?city=${city}&key=dc8fb4f85af34ac181d99afa27164508`)
+            console.log(data)
+            dispatch({
+                type: FETCH_WEATHER_SUCCESS,
+                weather: data.HeWeather5[0]
+            })
+        },
+        error => {
+            dispatch({
+                type: FETCH_WEATHER_FAILURE
+            })
+        }   
+    );
+}

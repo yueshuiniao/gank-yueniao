@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import Main from '../components/Main'
-import { changeNavState, fetchList } from '../actions';
+import { changeNavState, fetchList, fetchCity } from '../actions';
 
 const mapStateToProps = (state, { params }) => {
     // console.log(params)
@@ -15,4 +15,4 @@ const mapStateToProps = (state, { params }) => {
     }
 }
 
-export default connect(mapStateToProps, { changeNavState, fetchList })(Main);
+export default connect(mapStateToProps, { changeNavState, fetchList, fetchCity })(Main);

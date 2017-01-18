@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
-import { isNavOpen } from './little'
+import * as nav from './nav'
 import * as lists from './list'
 
 const rootReducer = combineReducers({
     routing: routerReducer,
-    isNavOpen,
+    ...nav,
     ...lists
 });
 

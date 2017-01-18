@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import '../style/main.scss'
 import userHead from '../images/dog.jpg'    //图片直接引入，棒
 
-const Nav = () => (
+const Nav = ({ city }) => (
     <div className="nav">
         <div className="nav-con">
             <div className="nav-user">
@@ -55,8 +55,13 @@ const Nav = () => (
                     // </li>    
                 }
                 
+                {
+                    city ? <div>{city}</div> : ''
+                }
                 
-            </ul>    
+            </ul>
+
+
         </div>
     </div>
 );

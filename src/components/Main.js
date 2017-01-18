@@ -5,9 +5,14 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import '../style/main.scss'
 import '../style/animate.scss'
 import Header from './Header'
-import Nav from './Nav'
+import Nav from '../containers/Nav'
 
 class Main extends Component {
+    componentDidMount() {
+        const { fetchCity } = this.props
+        fetchCity();
+    }
+
     render() {
         const { children, changeNavState, isNavOpen, params } = this.props
         //这个动画有一个深坑，宽度变化时直接给本组件设宽度会使动画无效，要用本组件的子组件把本组件的宽度撑起来
