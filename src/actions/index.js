@@ -8,6 +8,9 @@ export const FETCH_GIRLS_FAILURE = 'FETCH_GIRLS_FAILURE'
 export const FETCH_LIST_REQUEST = 'FETCH_List_REQUEST'
 export const FETCH_LIST_SUCCESS = 'FETCH_List_SUCCESS'
 export const FETCH_LIST_FAILURE = 'FETCH_List_FAILURE'
+export const FETCH_DAY_REQUEST = 'FETCH_DAY_REQUEST'
+export const FETCH_DAY_SUCCESS = 'FETCH_DAY_SUCCESS'
+export const FETCH_DAY_FAILURE = 'FETCH_DAY_FAILURE'
 
 export const CHANGE_NAV_STATE = 'CHANGE_NAV_STATE'  //改变侧边导航开合状态
 export const FETCH_CITY_REQUEST = 'FETCH_CITY_REQUEST'
@@ -51,7 +54,6 @@ export const changeNavState = (isNavOpen) => ({
 })
 
 export const fetchList = (page, tab = '前端') => (dispatch, getState) =>{
-    // console.log(tab)
     dispatch({
         type: FETCH_LIST_REQUEST,
         page,
@@ -80,9 +82,10 @@ export const fetchList = (page, tab = '前端') => (dispatch, getState) =>{
     );
 }
 
-// export const fetchDayList = (date) => (dispatch, getState) =>{
+//看接口好多天都没数据，先不做这个了
+// export const fetchDayList = (date = currDay) => (dispatch, getState) =>{
 //     dispatch({
-//         type: FETCH_LIST_REQUEST,
+//         type: FETCH_DAY_REQUEST,
 //         date
 //     });
 
@@ -91,20 +94,41 @@ export const fetchList = (page, tab = '前端') => (dispatch, getState) =>{
 //             console.log(`http://gank.io/api/day/${date}`)
 //             console.log(data)
 //             dispatch({
-//                 type: FETCH_LIST_SUCCESS,
+//                 type: FETCH_DAY_SUCCESS,
 //                 date,
 //                 results: data.results
 //             })
 //         },
 //         error => {
 //             dispatch({
-//                 type: FETCH_LIST_FAILURE,
+//                 type: FETCH_DAY_FAILURE,
 //                 date,
 //                 message: error.message || 'Something went wrong.',
 //             })
 //         }   
 //     );
 // }
+
+export const fetchWeather = (city) => (dispatch, getState) =>{
+    dispatch({
+        type: FETCH_WEATHER_REQUEST
+    });
+
+    return axios.get(`https://free-api.heweather.com/v5/hourly?city=${city}&key=dc8fb4f85af34ac181d99afa27164508`).then(
+        ({ data }) => {
+            console.log(`https://free-api.heweather.com/v5/hourly?city=${city}&key=dc8fb4f85af34ac181d99afa27164508`)
+            dispatch({
+                type: FETCH_WEATHER_SUCCESS,
+                weather: data.HeWeather5[0]
+            })
+        },
+        error => {
+            dispatch({
+                type: FETCH_WEATHER_FAILURE
+            })
+        }   
+    );
+}
 
 export const fetchCity = () => (dispatch, getState) =>{
     dispatch({
@@ -127,26 +151,4 @@ export const fetchCity = () => (dispatch, getState) =>{
             console.log(result.info);
         }
     });
-}
-
-export const fetchWeather = (city) => (dispatch, getState) =>{
-    dispatch({
-        type: FETCH_WEATHER_REQUEST
-    });
-
-    return axios.get(`https://free-api.heweather.com/v5/hourly?city=${city}&key=dc8fb4f85af34ac181d99afa27164508`).then(
-        ({ data }) => {
-            console.log(`https://free-api.heweather.com/v5/hourly?city=${city}&key=dc8fb4f85af34ac181d99afa27164508`)
-            console.log(data)
-            dispatch({
-                type: FETCH_WEATHER_SUCCESS,
-                weather: data.HeWeather5[0]
-            })
-        },
-        error => {
-            dispatch({
-                type: FETCH_WEATHER_FAILURE
-            })
-        }   
-    );
 }

@@ -8,7 +8,7 @@ const Nav = ({ city, weather }) => (
     <div className="nav">
         <div className="nav-con">
             <div className="nav-user">
-                <img className="nav-user-header" src={userHead}></img>
+                <img className="nav-user-header" src={userHead} role="presentation"></img>
                 <div className="nav-sign">Stay hungry, Study foolish</div>
             </div>
             <ul>
@@ -46,12 +46,7 @@ const Nav = ({ city, weather }) => (
                     <Link to="/App" activeClassName="nav-active">
                         <i className="iconfont icon-app1"></i>App
                     </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/day" activeClassName="nav-active">
-                        <i className="iconfont icon-day"></i>Everyday
-                    </Link>
-                </li>    
+                </li> 
                 
                 {
                     city ? 

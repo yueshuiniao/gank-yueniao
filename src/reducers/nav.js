@@ -25,11 +25,19 @@ export const city = (state = '', action) => {
 export const weather = (state = {}, action) => {
     switch(action.type) {
         case FETCH_WEATHER_SUCCESS:
-            const hourForecast = action.weather.hourly_forecast[0]
-            return {
-                tmp: hourForecast.tmp,
-                cond: hourForecast.cond.txt
-            };
+            const hourly_forecast = action.weather.hourly_forecast
+            if(hourly_forecast.length > 0) {
+                const hourForecastOne = hourly_forecast[0]
+                return {
+                    tmp: hourForecastOne.tmp,
+                    cond: hourForecastOne.cond.txt
+                };    
+            }else {
+                return {
+                    msg: '暂无数据'
+                }
+            }
+            
         case FETCH_WEATHER_REQUEST:
             return {
                 msg: '获取中..'

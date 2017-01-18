@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import 'normalize.css'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import '../style/main.scss'
@@ -9,7 +8,7 @@ import Nav from '../containers/Nav'
 
 class Main extends Component {
     componentDidMount() {
-        const { fetchCity } = this.props
+        const { fetchCity } = this.props;
         fetchCity();
     }
 
@@ -33,7 +32,7 @@ class Main extends Component {
                         isNavOpen={isNavOpen}
                         tab={params.tab}
                     />
-                    {children}    
+                    { children }    
                 </div>
             </div>        
         );
