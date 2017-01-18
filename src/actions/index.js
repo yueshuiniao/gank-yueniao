@@ -107,7 +107,9 @@ export const fetchList = (page, tab = '前端') => (dispatch, getState) =>{
 // }
 
 export const fetchCity = () => (dispatch, getState) =>{
-    // console.log(AMap, 555)
+    dispatch({
+        type: FETCH_CITY_REQUEST
+    });
     var citysearch = new window.AMap.CitySearch();  //AMap不加window ESLint会报错，暂时还没搞懂要怎么配置一下，在packjson里配置了env AMap: true好戏那个不行
     
     return citysearch.getLocalCity(function(status, result) {

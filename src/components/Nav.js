@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import '../style/main.scss'
 import userHead from '../images/dog.jpg'    //图片直接引入，棒
 
-const Nav = ({ city }) => (
+const Nav = ({ city, weather }) => (
     <div className="nav">
         <div className="nav-con">
             <div className="nav-user">
@@ -47,16 +47,21 @@ const Nav = ({ city }) => (
                         <i className="iconfont icon-app1"></i>App
                     </Link>
                 </li>
-                {
-                    // <li className="nav-item">
-                    //     <Link to="/day" activeClassName="nav-active">
-                    //         <i className="iconfont icon-day"></i>Everyday
-                    //     </Link>
-                    // </li>    
-                }
+                <li className="nav-item">
+                    <Link to="/day" activeClassName="nav-active">
+                        <i className="iconfont icon-day"></i>Everyday
+                    </Link>
+                </li>    
                 
                 {
-                    city ? <div>{city}</div> : ''
+                    city ? 
+                    (
+                        <div className="city-weather">
+                            {city ? <div>{city}</div> : ''}
+                            <div>{(weather.tmp && weather.cond) ? (weather.cond + ' ' + weather.tmp + '℃') : weather.msg}</div>
+                        </div>
+                    ) 
+                    : ''
                 }
                 
             </ul>

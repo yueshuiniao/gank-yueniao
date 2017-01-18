@@ -4,7 +4,8 @@ import Nav from '../components/Nav'
 
 const mapStateToProps = (state) => {
     return {
-        city: state.city
+        city: state.city,
+        weather: state.weather
     }
 }
 

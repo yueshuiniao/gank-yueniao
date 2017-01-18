@@ -13,6 +13,10 @@ export const city = (state = '', action) => {
     switch(action.type) {
         case FETCH_CITY_SUCCESS:
             return action.city;
+        case FETCH_CITY_REQUEST:
+            return '定位中..';
+        case FETCH_CITY_FAILURE:
+            return '定位失败';
         default:
             return state;
     }
@@ -21,7 +25,19 @@ export const city = (state = '', action) => {
 export const weather = (state = {}, action) => {
     switch(action.type) {
         case FETCH_WEATHER_SUCCESS:
-            return action.weather;
+            const hourForecast = action.weather.hourly_forecast[0]
+            return {
+                tmp: hourForecast.tmp,
+                cond: hourForecast.cond.txt
+            };
+        case FETCH_WEATHER_REQUEST:
+            return {
+                msg: '获取中..'
+            };
+        case FETCH_WEATHER_FAILURE:
+            return {
+                msg: '获取失败'
+            };
         default:
             return state;
     }
