@@ -20,15 +20,16 @@ npm start   //开发
 npm run build   //打包
 ```
 ###使用库：
-+ react //view
-+ redux //数据管理
-+ react-router //路由
-+ axios //取数据
-+ redux-thunk //redux异步控制
-+ react-hot-loader //热替换
-+ create-react-app //react官方脚手架
-+ lib-flexible //移动端自适应
-+ sass //css预处理器
++ react       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//view
++ redux       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//数据管理
++ react-router       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//路由
+ReactCSStransitionGroup       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//react官方动画库
++ axios       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//取数据
++ redux-thunk       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//redux异步控制
++ react-hot-loader       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//热替换
++ create-react-app       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//react官方脚手架
++ lib-flexible       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//移动端自适应
++ sass       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//css预处理器
 
 ###主要技术点总结：
 + 移动端自适应方案，使用手淘的移动端自适应方案[lib-flexible](https://github.com/amfe/article/issues/17)，对这套方案，进行了完整的尝试，也对sass有了进一步的学习使用
