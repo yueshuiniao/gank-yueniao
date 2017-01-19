@@ -7,8 +7,9 @@
 >* 页面效果比较简单，主要是给自己熟悉下react、redux
 
 ###截图
-![](https://raw.githubusercontent.com/yueshuiniao/mkImg/master/fLWHSY7.gif)
-![](http://i.imgur.com/G5liWiT.png)![](http://i.imgur.com/tZjXY0G.png)![](http://i.imgur.com/9hdff1i.png)![](http://i.imgur.com/QlgbRhp.png)
+![](https://raw.githubusercontent.com/yueshuiniao/mkImg/master/fLWHSY7.gif) <br/>
+![](http://i.imgur.com/ByBYRMk.png) <br/>
+![](http://i.imgur.com/d8AuXzz.png) <br/>
 
 ###使用：
 ```
