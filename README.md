@@ -23,7 +23,7 @@ npm run build   //打包
 + react       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//view
 + redux       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//数据管理
 + react-router       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//路由
-ReactCSStransitionGroup       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//react官方动画库
++ ReactCSStransitionGroup       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//react官方动画库
 + axios       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//取数据
 + redux-thunk       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//redux异步控制
 + react-hot-loader       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//热替换
@@ -39,4 +39,4 @@ ReactCSStransitionGroup       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//react�
 + ES6： ES6写起来真是太棒了，总是能找到更简单更酷更优雅的写法
 + 对overflow和scroll事件有了更深入的理解，通过对div的scroll事件的监听，通过scrollTop、scrollHeight、clientHeight三个的关系，判断元素滚动条滚动到底部，进而取下一页的数据，不过原生的滚动条好像，我的4.4的android系统好像显示不太好，我写了个小demo试了下，body的还可以，div好像就不行，在网上也咩有找到可用的处理办法，试了div { -webkit-overflow-scrolling: touch; }并没有用，暂时还没有找到处理办法，下次还是用iScroll好了。
 + ......
-+ 当然，这只是初版，待续...
++ 当然，这只是初版，有点拿react+redux写东西的感觉了，待续...
