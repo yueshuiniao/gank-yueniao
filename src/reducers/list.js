@@ -15,7 +15,7 @@ const createList = (tab) => {
                             type: v.type,
                             desc: v.desc,
                             who: v.who,
-                            publishedAt: v.publishedAt
+                            createdAt: v.createdAt
                         }))
                 ]
             default:

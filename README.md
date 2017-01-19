@@ -7,7 +7,8 @@
 >* 页面效果比较简单，主要是给自己熟悉下react、redux
 
 ###截图
-![](http://i.imgur.com/fLWHSY7.gif)![](http://i.imgur.com/G5liWiT.png)![](http://i.imgur.com/tZjXY0G.png)![](http://i.imgur.com/9hdff1i.png)![](http://i.imgur.com/QlgbRhp.png)
+![](http://i.imgur.com/rH9sgq2.gif)
+![](http://i.imgur.com/G5liWiT.png)![](http://i.imgur.com/tZjXY0G.png)![](http://i.imgur.com/9hdff1i.png)![](http://i.imgur.com/QlgbRhp.png)
 
 ###使用：
 ```
@@ -17,6 +18,16 @@ npm i  //安装(npm下载速度可能较慢，可以用 npm --registry=https://r
 npm start   //开发
 npm run build   //打包
 ```
+###使用库：
++ react //view
++ redux //数据管理
++ react-router //路由
++ axios //取数据
++ redux-thunk //redux异步控制
++ react-hot-loader //热替换
++ create-react-app //react官方脚手架
++ lib-flexible //移动端自适应
++ sass //css预处理器
 
 ###主要技术点总结：
 + 移动端自适应方案，使用手淘的移动端自适应方案[lib-flexible](https://github.com/amfe/article/issues/17)，对这套方案，进行了完整的尝试，也对sass有了进一步的学习使用
